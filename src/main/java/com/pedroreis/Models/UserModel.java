@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter @Getter @AllArgsConstructor
 public class UserModel {
 
-    private Character userId;
-    private Character userTag;
+    private String userId;
+    private String userTag;
 }

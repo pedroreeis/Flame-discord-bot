@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter @Setter @AllArgsConstructor
 public class GuildModel {
 
-    private Character serverId;
-    private Character serverPrefix;
-    private Character serverChannel_announce;
-    private Character serverIdRoleAdd;
+    private String serverId;
+    private String serverPrefix;
+    private String serverChannel_announce;
+    private String serverIdRoleAdd;
 }

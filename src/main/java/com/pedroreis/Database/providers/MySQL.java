@@ -43,14 +43,16 @@ public class MySQL implements Database {
     public void createTable() {
         try {
             PreparedStatement stm = this.connection.prepareStatement(
-                    "create table if not exists discordbot_users(`userId` varchar(18) NOT NULL, " +
-                            "`userTag` TEXT NOT NULL "
+                    "create table if not exists discordbot_users(`userId` VARCHAR(18) NOT NULL, " +
+                            "`userTag` TEXT NOT NULL, " +
+                            "PRIMARY KEY (`userId`) USING BTREE)"
             );
             PreparedStatement stm2 = this.connection.prepareStatement(
                     "create table if not exists discordbot_guilds(`serverId` varchar(18) NOT NULL, " +
                             "`serverPrefix` varchar(5) NOT NULL, " +
                             "`serverChannel_announce` varchar(18) NOT NULL, " +
-                            "`serverIdRoleAdd` varchar(18) NOT NULL, "
+                            "`serverIdRoleAdd` varchar(18) NOT NULL, " +
+                            "PRIMARY KEY (`serverId`) USING BTREE)"
             );
             stm.executeUpdate();
             stm2.executeUpdate();
